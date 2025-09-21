@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <title>Wilo AI</title>
+    <meta charset="utf-8"></meta>
+    
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@5" rel="stylesheet" type="text/css" />
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@5/themes.css" rel="stylesheet" type="text/css" />
+  </head>
+  
+  <body>
+    <div class="navbar bg-base-100 shadow-sm">
+      <div class="flex-1">
+        <a class="btn btn-ghost text-xl">Wilo AI</a>
+      </div>
+      
+      <div class="flex-none">
+        <div class="dropdown dropdown-end">
+          <div tabindex="0" role="button" class="btn m-1">
+            Theme
+            <svg
+              width="12px"
+              height="12px"
+              class="inline-block h-2 w-2 fill-current opacity-60"
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 2048 2048">
+              <path d="M1799 349l242 241-1017 1017L7 590l242-241 775 775 775-775z"></path>
+            </svg>
+          </div>
+          <ul tabindex="0" class="dropdown-content bg-base-300 rounded-box z-1 w-52 p-2 shadow-2xl">
+            <li>
+              <input
+                type="radio"
+                name="theme-dropdown"
+                class="theme-controller w-full btn btn-sm btn-block btn-ghost justify-start"
+                aria-label="Default"
+                value="default" />
+            </li>
+            <li>
+              <input
+                type="radio"
+                name="theme-dropdown"
+                class="theme-controller w-full btn btn-sm btn-block btn-ghost justify-start"
+                aria-label="Dark"
+                value="dark" />
+            </li>
+            <li>
+              <input 
+                type="radio"
+                name="theme-dropdown"
+                class="theme-controller w-full btn btn-sm btn-block btn-ghost justify-start"
+                aria-label="Black"
+                value="black" />
+            </li>
+            <li>
+              <input
+                type="radio"
+                name="theme-dropdown"
+                class="theme-controller w-full btn btn-sm btn-block btn-ghost justify-start"
+                aria-label="Retro"
+                value="retro" />
+            </li>
+            <li>
+              <input
+                type="radio"
+                name="theme-dropdown"
+                class="theme-controller w-full btn btn-sm btn-block btn-ghost justify-start"
+                aria-label="Cyberpunk"
+                value="cyberpunk" />
+            </li>
+            <li>
+              <input
+                type="radio"
+                name="theme-dropdown"
+                class="theme-controller w-full btn btn-sm btn-block btn-ghost justify-start"
+                aria-label="Valentine"
+                value="valentine" />
+            </li>
+            <li>
+              <input
+                type="radio"
+                name="theme-dropdown"
+                class="theme-controller w-full btn btn-sm btn-block btn-ghost justify-start"
+                aria-label="Aqua"
+                value="aqua" />
+            </li>
+          </ul>
+        </div>
+        
+        <div class="dropdown dropdown-end">
+          <div tabindex="0" role="button" class="btn btn-ghost btn-circle avatar">
+            <div class="w-10 rounded-full">
+              <img
+                alt=""
+                src="https://images.chesscomfiles.com/uploads/v1/user/391760091.4d717797.160x160o.568244c042e3.jpg" />
+            </div>
+          </div>
+          <ul
+            tabindex="0"
+            class="menu menu-sm dropdown-content bg-base-100 rounded-box z-1 mt-3 w-52 p-2 shadow">
+            <li>
+              <a class="justify-between">
+                Profile
+                <span class="badge">New</span>
+              </a>
+            </li>
+            <li><a>Settings</a></li>
+            <li><a>Logout</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    
+    <!-- Ici on va faire le menu en bas à droite -->
+    <div class="fab fab-flower">
+      <div tabindex="0" role="button" class="btn btn-lg btn-circle">
+        <svg
+          aria-label="New"
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 16 16"
+          fill="currentColor"
+          class="size-6"
+        >
+          <path
+            d="M8.75 3.75a.75.75 0 0 0-1.5 0v3.5h-3.5a.75.75 0 0 0 0 1.5h3.5v3.5a.75.75 0 0 0 1.5 0v-3.5h3.5a.75.75 0 0 0 0-1.5h-3.5v-3.5Z"
+          />
+        </svg>
+      </div>
+      
+      <button class="fab-main-action btn btn-circle btn-lg btn-primary" id="btn-new">
+        <svg
+          aria-label="New music"
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 16 16"
+          fill="currentColor"
+          class="size-6"
+        >
+          <path
+            fill-rule="evenodd"
+            d="M11.013 2.513a1.75 1.75 0 0 1 2.475 2.474L6.226 12.25a2.751 2.751 0 0 1-.892.596l-2.047.848a.75.75 0 0 1-.98-.98l.848-2.047a2.75 2.75 0 0 1 .596-.892l7.262-7.261Z"
+            clip-rule="evenodd"
+          />
+        </svg>
+      </button>
+      
+      <button class="btn btn-lg btn-circle">
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-chat-dots-fill" viewBox="0 0 16 16">
+          <path d="M16 8c0 3.866-3.582 7-8 7a9 9 0 0 1-2.347-.306c-.584.296-1.925.864-4.181 1.234-.2.032-.352-.176-.273-.362.354-.836.674-1.95.77-2.966C.744 11.37 0 9.76 0 8c0-3.866 3.582-7 8-7s8 3.134 8 7M5 8a1 1 0 1 0-2 0 1 1 0 0 0 2 0m4 0a1 1 0 1 0-2 0 1 1 0 0 0 2 0m3 1a1 1 0 1 0 0-2 1 1 0 0 0 0 2"/>
+        </svg>
+      </button>
+      <button class="btn btn-lg btn-circle">
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-openai" viewBox="0 0 16 16">
+          <path d="M14.949 6.547a3.94 3.94 0 0 0-.348-3.273 4.11 4.11 0 0 0-4.4-1.934A4.1 4.1 0 0 0 8.423.2 4.15 4.15 0 0 0 6.305.086a4.1 4.1 0 0 0-1.891.948 4.04 4.04 0 0 0-1.158 1.753 4.1 4.1 0 0 0-1.563.679A4 4 0 0 0 .554 4.72a3.99 3.99 0 0 0 .502 4.731 3.94 3.94 0 0 0 .346 3.274 4.11 4.11 0 0 0 4.402 1.933c.382.425.852.764 1.377.995.526.231 1.095.35 1.67.346 1.78.002 3.358-1.132 3.901-2.804a4.1 4.1 0 0 0 1.563-.68 4 4 0 0 0 1.14-1.253 3.99 3.99 0 0 0-.506-4.716m-6.097 8.406a3.05 3.05 0 0 1-1.945-.694l.096-.054 3.23-1.838a.53.53 0 0 0 .265-.455v-4.49l1.366.778q.02.011.025.035v3.722c-.003 1.653-1.361 2.992-3.037 2.996m-6.53-2.75a2.95 2.95 0 0 1-.36-2.01l.095.057L5.29 12.09a.53.53 0 0 0 .527 0l3.949-2.246v1.555a.05.05 0 0 1-.022.041L6.473 13.3c-1.454.826-3.311.335-4.15-1.098m-.85-6.94A3.02 3.02 0 0 1 3.07 3.949v3.785a.51.51 0 0 0 .262.451l3.93 2.237-1.366.779a.05.05 0 0 1-.048 0L2.585 9.342a2.98 2.98 0 0 1-1.113-4.094zm11.216 2.571L8.747 5.576l1.362-.776a.05.05 0 0 1 .048 0l3.265 1.86a3 3 0 0 1 1.173 1.207 2.96 2.96 0 0 1-.27 3.2 3.05 3.05 0 0 1-1.36.997V8.279a.52.52 0 0 0-.276-.445m1.36-2.015-.097-.057-3.226-1.855a.53.53 0 0 0-.53 0L6.249 6.153V4.598a.04.04 0 0 1 .019-.04L9.533 2.7a3.07 3.07 0 0 1 3.257.139c.474.325.843.778 1.066 1.303.223.526.289 1.103.191 1.664zM5.503 8.575 4.139 7.8a.05.05 0 0 1-.026-.037V4.049c0-.57.166-1.127.476-1.607s.752-.864 1.275-1.105a3.08 3.08 0 0 1 3.234.41l-.096.054-3.23 1.838a.53.53 0 0 0-.265.455zm.742-1.577 1.758-1 1.762 1v2l-1.755 1-1.762-1z"/>
+        </svg>
+      </button>
+      <button class="btn btn-lg btn-circle">
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-cloud-download" viewBox="0 0 16 16">
+          <path d="M4.406 1.342A5.53 5.53 0 0 1 8 0c2.69 0 4.923 2 5.166 4.579C14.758 4.804 16 6.137 16 7.773 16 9.569 14.502 11 12.687 11H10a.5.5 0 0 1 0-1h2.688C13.979 10 15 8.988 15 7.773c0-1.216-1.02-2.228-2.313-2.228h-.5v-.5C12.188 2.825 10.328 1 8 1a4.53 4.53 0 0 0-2.941 1.1c-.757.652-1.153 1.438-1.153 2.055v.448l-.445.049C2.064 4.805 1 5.952 1 7.318 1 8.785 2.23 10 3.781 10H6a.5.5 0 0 1 0 1H3.781C1.708 11 0 9.366 0 7.318c0-1.763 1.266-3.223 2.942-3.593.143-.863.698-1.723 1.464-2.383"/>
+          <path d="M7.646 15.854a.5.5 0 0 0 .708 0l3-3a.5.5 0 0 0-.708-.708L8.5 14.293V5.5a.5.5 0 0 0-1 0v8.793l-2.146-2.147a.5.5 0 0 0-.708.708z"/>
+        </svg>
+      </button>
+      <button class="btn btn-lg btn-circle">D</button>
+    </div>
+    
+    <div class="flex">
+      <!-- Ok ici c'est tout ce qui concerne la liste des sons -->
+      <div class="m-5 flex-1">
+        <div class="flex items-center space-x-2 shadow-sm border border-gray-200 rounded-lg p-4 my-3">
+          <button class="btn btn-sm btn-circle">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-play-fill" viewBox="0 0 16 16">
+              <path d="m11.596 8.697-6.363 3.692c-.54.313-1.233-.066-1.233-.697V4.308c0-.63.692-1.01 1.233-.696l6.363 3.692a.802.802 0 0 1 0 1.393"/>
+            </svg>
+          </button>
+          <h2>Le song 1</h2>
+          <progress class="progress w-56 ml-6" value="0" max="100"></progress>
+          <label>3:56</label>
+        </div>
+        
+        <div class="flex items-center space-x-2 shadow-sm border border-gray-200 rounded-lg p-4 my-3">
+          <button class="btn btn-sm btn-circle">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-pause-fill" viewBox="0 0 16 16">
+              <path d="M5.5 3.5A1.5 1.5 0 0 1 7 5v6a1.5 1.5 0 0 1-3 0V5a1.5 1.5 0 0 1 1.5-1.5m5 0A1.5 1.5 0 0 1 12 5v6a1.5 1.5 0 0 1-3 0V5a1.5 1.5 0 0 1 1.5-1.5"/>
+            </svg>
+          </button>
+          <h2>Le song 2</h2>
+          
+          <progress class="progress w-56 ml-6" value="45" max="100"></progress>
+          <label>1:20</label>
+        </div>
+        
+        <div class="flex items-center space-x-2 shadow-sm border border-gray-200 rounded-lg p-4 my-3">
+          <button class="btn btn-sm btn-circle">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-play-fill" viewBox="0 0 16 16">
+              <path d="m11.596 8.697-6.363 3.692c-.54.313-1.233-.066-1.233-.697V4.308c0-.63.692-1.01 1.233-.696l6.363 3.692a.802.802 0 0 1 0 1.393"/>
+            </svg>
+          </button>
+          <h2>Le song 3</h2>
+          
+          <progress class="progress w-56 ml-6" value="0" max="100"></progress>
+          <label>0:45</label>
+        </div>
+      </div>
+    
+      <!-- La génération -->
+      <div class="m-5 card card-border shadow-sm flex-1 py-5" id="generate">
+        <fieldset class="fieldset card-body">
+          <legend class="fieldset-legend">What's the name of the artist ?</legend>
+          <input type="text" class="input input-neutral" placeholder="Type here" />
+          
+          <fieldset class="fieldset">
+            <legend class="fieldset-legend">Kind of music</legend>
+            <select class="select select-neutral">
+              <option>Rock & Rock’n’roll</option>
+              <option>Pop</option>
+              <option>R&B</option>
+              <option>Rap</option>
+              <option>Electro/Dance</option>
+              <option>Jazz/Blues</option>
+              <option>Divers</option>
+            </select>
+          </fieldset>
+          
+          <fieldset class="fieldset">
+            <legend class="fieldset-lyrics">Lyrics</legend>
+            <textarea placeholder="Write your lyrics here" class="textarea textarea-neutral"></textarea>
+          </fieldset>
+          
+          <button class="btn btn-primary">Generate</button>
+        <button class="btn btn-outline" id="btn-cancel">Cancel</button>
+        </fieldset>
+      </div>
+    </div>
+    
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <script src="./js/main.js"></script>
+  </body>
+</html>
